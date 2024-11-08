@@ -19,7 +19,7 @@ def get_logger(testing=TESTING):
         )
     else:
         logging.basicConfig(
-            filename=LOG_FILE,
+            filename="app.log",
             filemode="a",
             format="%(asctime)s-%(name)s-%(levelname)s - %(message)s",
             datefmt="%H:%M:%S",

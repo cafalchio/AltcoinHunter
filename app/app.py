@@ -8,6 +8,8 @@ from sqlalchemy.orm import DeclarativeBase
 
 logger = get_logger()
 
+COINGECKO_API = os.getenv("COINGECKO_API")
+
 load_dotenv()
 
 
