@@ -19,12 +19,11 @@ db = SQLAlchemy(model_class=Base)
 
 
 def create_app(database=None):
-    if database is None:
-        database = os.environ.get("FLASK_SECRET_KEY")
     app = Flask(__name__)
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("FLASK_DATABASE_PROD")
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = TESTING
-    app.config["TESTING"] = TESTING
+    app.config["SQLALCHEMY_DATABASE_URI"] = database or os.getenv("FLASK_DATABASE_PROD")    
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = os.getenv("APP_TESTING") == "true"
+    app.config["TESTING"] =  os.getenv("APP_TESTING") == "true"
+
     db.init_app(app)
 
     with app.app_context():
