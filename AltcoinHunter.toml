@@ -1,7 +1,7 @@
 [project]
 version = "0.1"
 dynamic = ["version"]
-name = "cryptofinder"
+name = "AltcoinHunter"
 description = "Webfinder for new cryptocurrencies"
 readme = "README.md"
 requires-python = ">=3.10"
