@@ -9,6 +9,7 @@ dir_path = os.path.dirname(os.path.abspath(__file__))
 DAYS = 1
 
 TESTING = os.getenv("APP_TESTING") == "true"
+COINGECKO_API = os.getenv("COINGECKO_API")
 
 def get_logger(testing=TESTING):
     if testing:

@@ -3,12 +3,11 @@ from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from app.config_app import TESTING, get_logger
+from app.config_app import get_logger
 from sqlalchemy.orm import DeclarativeBase
 
 logger = get_logger()
 
-COINGECKO_API = os.getenv("COINGECKO_API")
 
 load_dotenv()
 
@@ -18,7 +17,7 @@ class Base(DeclarativeBase):
 
 
 db = SQLAlchemy(model_class=Base)
-
+print(os.getenv("FLASK_DATABASE_PROD"))
 
 def create_app(database=None):
     app = Flask(__name__)
