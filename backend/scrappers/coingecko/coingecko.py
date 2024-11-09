@@ -18,5 +18,5 @@ def coingecko():
             source="coinbase",
             is_shit=False,
         )
-
+    logger.info(f"-Got {len(new_coins.keys())} coins from miningpoolstats")
     update_all_coins(new_coins)
